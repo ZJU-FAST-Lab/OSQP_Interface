@@ -14,7 +14,8 @@
 class IOSQP
 {
 public:
-    IOSQP() : pWork(nullptr),
+    IOSQP() : UNBOUNDED_VAL(OSQP_INFTY),
+              pWork(nullptr),
               pSettings(nullptr),
               pData(nullptr)
     {
@@ -34,7 +35,7 @@ public:
             c_free(pData);
     }
 
-    static const double UNBOUNDEDVAL = OSQP_INFTY;
+    const double UNBOUNDED_VAL;
 
     inline c_int setMats(Eigen::SparseMatrix<double> &P,
                          Eigen::VectorXd &q,
