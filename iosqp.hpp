@@ -34,6 +34,8 @@ public:
             c_free(pData);
     }
 
+    static const double UNBOUNDEDVAL = OSQP_INFTY;
+
     inline c_int setMats(Eigen::SparseMatrix<double> &P,
                          Eigen::VectorXd &q,
                          Eigen::SparseMatrix<double> &A,
